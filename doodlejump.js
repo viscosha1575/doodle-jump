@@ -23,8 +23,8 @@ let doodler = {
 //physics
 let velocityX = 0; 
 let velocityY = 0; //doodler jump speed
-let initialVelocityY = -3; //starting velocity Y
-let gravity = 0.05;
+let initialVelocityY = -4; //starting velocity Y
+let gravity = 0.5;
 
 //platforms
 let platformArray = [];
@@ -138,10 +138,10 @@ function moveDoodler(e) {
     const touchX = touch?.clientX; // Get X coordinate of touch
 
     if ((touchX > boardWidth / 2) || e.code == "KeyD") { // Move right
-        velocityX = 1;
+        velocityX = 4;
         doodler.img = doodlerRightImg;
     } else if ((touchX < boardWidth / 2) || e.code == "KeyA") { // Move left
-        velocityX = -1;
+        velocityX = -4;
         doodler.img = doodlerLeftImg;
     }
     if (gameOver) {
