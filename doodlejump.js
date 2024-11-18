@@ -123,10 +123,10 @@ function moveDoodler(e) {
     const touchX = touch.clientX; // Получаем координату касания по X
 
     if (touchX > boardWidth / 2) { // Касание правой стороны экрана
-        velocityX = 1;
+        velocityX = 4;
         doodler.img = doodlerRightImg;
     } else { // Касание левой стороны экрана
-        velocityX = -1;
+        velocityX = -4;
         doodler.img = doodlerLeftImg;
     }
     if (gameOver) {
