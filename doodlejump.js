@@ -133,16 +133,17 @@ function update(timestamp) {
 function moveDoodler(e) {
     const touchX = e.touches?.[0]?.clientX;
 
+    if (gameOver) {
+        resetGame(); // Если игра завершена, перезапускаем
+        return;
+    }
+
     if ((touchX > boardWidth / 2) || e.code === "KeyD") {
         velocityX = 4;
         doodler.img = doodlerRightImg;
     } else if ((touchX < boardWidth / 2) || e.code === "KeyA") {
         velocityX = -4;
         doodler.img = doodlerLeftImg;
-    }
-
-    if (gameOver) {
-        resetGame();
     }
 }
 
